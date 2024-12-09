@@ -112,8 +112,8 @@
 	 
 	 /* for wrapper */
 	 .wrapper {
-		 max-width: 1360px;
-		 width: 60.1%;
+		 max-width: 1920px;
+		 width: 80.1%;
 		 margin: 0 auto;
 	 }
 	 
@@ -123,3 +123,220 @@
 		 padding: 0;
 		 margin: 0;
 	 }
+
+	 a{
+		color: black;
+	 }
+
+	 header .wrapper{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0px 1px 1px -1px #111;    
+	 }
+
+	 .headerDiv{
+		width: 100%;
+		padding: 10px 5%;
+		display: flex;
+	 }
+	 
+	 .headerInitial{
+		display: flex;
+		align-items: center;
+		font-family: "UnifrakturMaguntia", cursive;
+		font-size: 1.3em;
+		color: red;
+	 }
+	 .headerLine{
+		color: red;
+	 }
+	 .titleWrapper{
+		width: 20%;
+		font-size: 3em;
+		font-weight: 200;
+	 }
+	 .titleWrapper a{
+		width: 100%;
+		display: flex;
+	 }
+	 
+	 .title{
+		font-family: "Alfa Slab One", serif;
+		font-weight: 100;
+		color: red;
+	 }
+	
+	.inputDiv{
+		width: 60%;
+		padding: 5px 1%;
+		display: flex;
+		align-items: center;
+		background-color: rgb(248, 249, 244);
+		border-radius: 2px;
+		cursor: pointer;
+	}
+
+	.navbarList{
+		width: 50%;
+		padding: 10px 5%;
+		font-size: 1.5em;
+		font-weight: 500;
+		display: flex ;
+		justify-content: space-between;
+	}
+
+	.searchIcon::before{
+		content: "\f002";
+		font-family: "FontAwesome";
+		font-size: 1.5em;
+	}
+	.searchIcon span{
+		display: none;
+	}
+
+	.inputError, .inputDiv label{
+		display: none;
+	}
+
+	.searchBox{
+		width: 100%;
+		padding: 0 1%;
+		border: none;
+		font-size: 1.2em;
+		cursor: pointer;
+		background-color: rgb(248, 249, 244);
+	}
+
+	.clientInfo{
+		width: 20%;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+	}
+
+	.clientInfo .saveIcon:before{
+		content: "\f02e";
+		font-family: "FontAwesome";
+		font-size: 1.5em;
+	}
+
+	.clientInfo .saveIcon span{
+		font-size: 1.5em;
+		font-weight: 400;
+	}
+
+	.userIcon span{
+		display: none;
+	}
+
+	.clientInfo span{
+		padding: 0 15px;
+	}
+	.userIcon:before{
+		content: "\f007";
+		font-family: "FontAwesome";
+		font-size: 1.5em;
+	}
+
+	.recipeCards{
+		width: 100%;
+		background-color: rgb(248, 249, 244);
+	}
+
+	.recipeCards .wrapper{
+		width: 75%;
+		padding-bottom: 30px;
+	}
+
+	.cardList{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.cardListItem{
+		width: 23%;
+		border:  gray;
+		margin-top: 30px;
+		background-color: white;
+	}
+
+	.cardHeading{
+		padding-bottom: 50px;
+	}
+
+	.cardDesc{
+		max-height: fit-content;
+		padding: 20px 5%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cardTitle{
+		font-size: 1.5em;
+		font-weight: 800;
+	}
+
+	.cookName{
+		font-size: 1.1em
+	}
+
+	.cardTag{
+		width: fit-content;
+		padding: 7px 5%;
+		border-radius: 20px;
+		margin: 10px 0;
+		display: block;
+		opacity: 70%;
+		background-color: rgb(73, 129, 233);
+	}
+	.recipeCards figure{
+		width: 100%;
+		padding: 100px 1%;
+		background-image: url(/assets/images/placeHolder.jpg);
+		background-size: cover;
+		background-position: bottom;
+	}
+
+	.timeEstimation{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.timeEstimation .saveIcon::before{
+		content: "\f02e";
+		font-family: "FontAwesome";
+		font-size: 1.5em;
+		color: gray;	
+	}
+
+	.timeEstimation .saveIcon span{
+		display: none;
+	}
+
+	.pagination{
+		padding: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.pagination-list{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.pg-listItem{
+		width: 3%;
+		padding: 5px 0;
+		border: 1px black inset;
+		background-color: rgb(248, 249, 244);
+		font-size: 1.5em;
+	}
+
+	@media(max-width: 1760px){
+		.cardTitle{
+			font-size: 1em;
+		}
+	}
