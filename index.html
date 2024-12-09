@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Ardent Template</title>
@@ -12,165 +13,431 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=UnifrakturMaguntia&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Alike&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=UnifrakturMaguntia&display=swap"
+    rel="stylesheet">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/styles.css">
-  
+
 </head>
+
 <body>
   <div class="container">
     <!-- header content of the page -->
     <header>
-        <div class="wrapper">
-          <div class="headerDiv">
-            <div class="titleWrapper">
-              <a href="#Home">
-                <span class="headerInitial">E</span>
-                <span class="headerLine">|</span>
-                <h1 class="title">Cooking</h1>
-              </a>
-            </div>
-            <div>
-              <span class="searchIcon"><span>Search-Icon</span></span>
-              <label for="searchBox">Search-Box</label>
-              <input type="text" id="searchBox" class="searchBox" placeholder="What would you like to cook?">
-              <span class="inputError">Error-Message</span>
-            </div>
-            <div class="clientInfo">
-              <span class="saveIcon"><span>Your Recipe Box.</span></span>
-              <span class="userIcon"><span>User</span></span>
-            </div>
+      <div class="wrapper">
+        <div class="headerDiv">
+          <div class="titleWrapper">
+            <a href="#Home">
+              <span class="headerInitial">E</span>
+              <span class="headerLine">|</span>
+              <h1 class="title">Cooking</h1>
+            </a>
           </div>
-          <nav class="navbar">
-            <ul class="navbarList">
-              <li clas="navListItem">
-                <a href="#wtcook?">What to Cook?</a>
-              </li>
-              <li clas="navListItem">
-                <a href="#recipes">Recipes</a>
-              </li>
-              <li clas="navListItem">
-                <a href="#ingredients">Ingredients</a>
-              </li>
-              <li clas="navListItem">
-                <a href="#occasions">Occasions</a>
-              </li>
-              <li clas="navListItem">
-                <a href="#about">About</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="inputDiv">
+            <span class="searchIcon"><span>Search-Icon</span></span>
+            <label for="searchBox">Search-Box</label>
+            <input type="text" id="searchBox" class="searchBox" placeholder="What would you like to cook?">
+            <span class="inputError">Error-Message</span>
+          </div>
+          <div class="clientInfo">
+            <span class="saveIcon"><span>Your Recipe Box</span></span>
+            <span class="userIcon"><span>User</span></span>
+          </div>
         </div>
+        <nav class="navbar">
+          <ul class="navbarList">
+            <li clas="navListItem">
+              <a href="#wtcook?">What to Cook</a>
+            </li>
+            <li clas="navListItem">
+              <a href="#recipes">Recipes</a>
+            </li>
+            <li clas="navListItem">
+              <a href="#ingredients">Ingredients</a>
+            </li>
+            <li clas="navListItem">
+              <a href="#occasions">Occasions</a>
+            </li>
+            <li clas="navListItem">
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <!-- main content of the page -->
     <main>
       <section class="recipeCards">
         <div class="wrapper">
-          <div class="cardWrapper">
-            <ul class="carList">
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage1">
-                </figure>
+          <ul class="cardList">
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage1">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage2">
-                </figure>
+              </iv>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage2">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage3">
-                </figure>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage3">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage4">
-                </figure>
+              </div>
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage4">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage5">
-                </figure>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage5">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage6">
-                </figure>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage6">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage7">
-                </figure>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage7">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-              <li class="cardListItem">
-                <figure>
-                  <img src="" alt="cardImage8">
-                </figure>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage8">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
                 <h4 class="cardTitle">Card Title</h4>
-                <span class="cardAddress">Address</span>
+                <span class="cookName">Cook-Names</span>
                 <span class="cardTag">CardTag</span>
+                </div>
                 <div class="timeEstimation">
                   <span class="timeToPrepare">Meal-Preparation-Time</span>
                   <span class="saveIcon"><span>Save-Icon</span></span>
                 </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage5">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage6">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage7">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage8">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage5">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage6">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage7">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage8">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage5">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage6">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage7">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+            <li class="cardListItem">
+              <figure>
+                <img src="" alt="cardImage8">
+              </figure>
+              <div class="cardDesc">
+                <div class="cardHeading">
+                <h4 class="cardTitle">Card Title</h4>
+                <span class="cookName">Cook-Names</span>
+                <span class="cardTag">CardTag</span>
+                </div>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Meal-Preparation-Time</span>
+                  <span class="saveIcon"><span>Save-Icon</span></span>
+                </div>
+              </div>
+
+            </li>
+          </ul>
         </div>
+      </section>
+
+      <section class="pagination">
+        <ul class="pagination-list">
+          <li class="pg-listItem">1</li>
+          <li class="pg-listItem">2</li>
+          <li class="pg-listItem">3</li>
+          <li class="pg-listItem">4</li>
+          <li class="pg-listItem">5</li>
+          <li class="pg-listItem">6</li>
+          <li class="pg-listItem">7</li>
+          <li class="pg-listItem">8</li>
+          <li class="pg-listItem">9</li>
+          <li class="pg-listItem">10</li>
+        </ul>
       </section>
     </main>
     <!-- footer content of the page -->
-     <footer></footer>
+    <footer></footer>
   </div>
   <script src="assets/js/index.js"></script>
 </body>
+
 </html>
