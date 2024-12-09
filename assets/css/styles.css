@@ -231,6 +231,7 @@ header {
 	font-family: "UnifrakturMaguntia", cursive;
 	font-size: 1.3em;
 	color: red;
+	cursor: pointer;
 }
 
 .headerLine {
@@ -238,7 +239,7 @@ header {
 }
 
 .titleWrapper {
-	width: 20%;
+	width: fit-content;
 	font-size: 3em;
 	font-weight: 200;
 }
@@ -261,7 +262,6 @@ header {
 	align-items: center;
 	background-color: rgb(248, 249, 244);
 	border-radius: 2px;
-	cursor: pointer;
 }
 
 .navbarList {
@@ -347,10 +347,17 @@ header {
 	margin-top: 30px;
 	background-color: white;
 	box-shadow: 0px 1px 1px -1px #111;
+	cursor: pointer;
+}
+
+.cardListItem:hover {
+	opacity: 80%;
+	background-color: rgb(152, 151, 144);
 }
 
 .cardHeading {
-	padding-bottom: 50px;
+	max-height: 500px;
+	height: 150px;
 }
 
 .cardDesc {
@@ -390,6 +397,8 @@ header {
 .timeEstimation {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	margin-top: auto;
 }
 
 .timeEstimation .saveIcon::before {
@@ -428,7 +437,7 @@ header {
 
 @media(max-width: 1760px) {
 	.titleWrapper {
-		width: 25%;
+		width: fit-content;
 		font-size: 2.5em;
 		text-align: end;
 	}
@@ -436,6 +445,11 @@ header {
 	.clientInfo {
 		width: 25%;
 		font-size: 0.9em;
+	}
+
+	.saveIcon,
+	.userIcon {
+		cursor: pointer;
 	}
 
 	.inputDiv {
@@ -458,7 +472,6 @@ header {
 	}
 
 	.titleWrapper {
-		width: 20%;
 		font-size: 2em;
 	}
 
@@ -491,7 +504,6 @@ header {
 	}
 
 	.titleWrapper {
-		width: 30%;
 		font-size: 2em;
 	}
 
@@ -520,7 +532,6 @@ header {
 @media(max-width: 768px) {
 
 	.titleWrapper {
-		width: 30%;
 		font-size: 1.6em;
 	}
 
@@ -555,7 +566,6 @@ header {
 	}
 
 	.titleWrapper {
-		width: 30%;
 		font-size: 1.6em;
 	}
 
@@ -584,7 +594,6 @@ header {
 	}
 
 	.titleWrapper {
-		width: 60%;
 		font-size: 1.4em;
 	}
 
