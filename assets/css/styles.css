@@ -415,7 +415,6 @@ header {
 .pagination {
 	padding: 20px;
 	text-align: center;
-	cursor: pointer;
 }
 
 .pagination-list {
@@ -433,6 +432,7 @@ header {
 	background-color: rgb(248, 249, 244);
 	font-size: 1.5em;
 	box-shadow: 0px 1px 1px -1px #111;
+	cursor: pointer;
 }
 
 @media(max-width: 1760px) {
@@ -571,6 +571,7 @@ header {
 
 	.inputDiv {
 		width: 70%;
+		font-size: 0.7em;
 	}
 
 	.cardList {
@@ -584,6 +585,10 @@ header {
 	.navbarList {
 		width: 100%;
 		padding: 10px 1%;
+	}
+
+	.pg-listItem{
+		width: 5%;
 	}
 }
 
