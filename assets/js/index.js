@@ -8,31 +8,35 @@ let itemsPerPage = 8;
 let currentPage = 1;
 let timer;
 
-searchBox.addEventListener("input", debounce)
+searchBox.addEventListener("input", debounce);
 
 function debounce() {
-    clearTimeout(timer)
-    timer = setTimeout(() => {
-        searchOutput();
-    }, 1000)
-  }
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    searchOutput();
+  }, 1000);
+}
 
 async function getdata() {
-  // Fetch data
-  await fetch(api)
-    .then((res) => res.json())
-    .then((data) => {
-      globalData = data.recipes;
-      console.log(globalData);
-      pagination();
-    })
-    .catch((error) => console.error("Error fetching data:", error));
+  try {
+    let res = await fetch(api);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    let data = await res.json();
+    globalData = data.recipes;
+    console.log(globalData);
+    pagination();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    alert("There was an issue fetching the data. Please try again later.");
+  }
 }
 
 async function updateDOM(limit, skip) {
   cardContainer.innerHTML = "";
 
-  let res = await fetch(`${api}?limit=${limit}&skip=${skip}`)
+  let res = await fetch(`${api}?limit=${limit}&skip=${skip}`);
   let data = await res.json();
   console.log(data);
 
@@ -61,43 +65,48 @@ async function updateDOM(limit, skip) {
 }
 
 async function pagination() {
-    let limit = 12;
-    let skip = 0;
+  let limit = 12;
+  let skip = 0;
 
-    paginationContainer.innerHTML = "";
-    let totalPages = Math.ceil(globalData.length / itemsPerPage);
-    console.log(totalPages);
-    updateDOM(limit, skip)
+  paginationContainer.innerHTML = "";
+  let totalPages = Math.ceil(globalData.length / limit);
+  console.log(totalPages);
+  updateDOM(limit, skip);
 
+  for (let i = 0; i < totalPages; i++) {
+    const pageListItem = document.createElement("li");
+    pageListItem.className = `pg-listItem pg${i + 1}`;
+    pageListItem.innerHTML = `${i + 1}`;
+    if (i === 0) {
+      pageListItem.classList.add("pg-listItem-active");
+    }
+    paginationContainer.appendChild(pageListItem);
 
-        for(let i = 0; i < totalPages; i++){
-            const pageListItem = document.createElement("li");
-            pageListItem.className = `pg-listItem pg${i+1}`;
-            pageListItem.innerHTML =`${i+1}`;
-            paginationContainer.appendChild(pageListItem);
-            pageListItem.onclick = () => {
-                skip = i * limit;
-                console.log(skip);
-                pageListItem.classList.remove("pg-listItem-active");
-                updateDOM(limit, skip)
-            };
-            currentPage = i + 1;
-            pageListItem.classList.add("pg-listItem-active");
-            };
-  };
+    pageListItem.onclick = () => {
+      paginationContainer.querySelectorAll(".pg-listItem").forEach((item) => {
+        item.classList.remove("pg-listItem-active");
+      });
+      pageListItem.classList.add("pg-listItem-active");
+      skip = i * limit;
+      console.log(skip);
+      updateDOM(limit, skip);
+    };
+  }
+}
 
-  async function searchOutput(){
-    const input = searchBox.value.toLowerCase();
-    console.log(input);
-    cardContainer.innerHTML = "";
-    let res = await fetch(`${api}/search?q=${input}`)
-    let data = await res.json();
+async function searchOutput() {
+  const input = searchBox.value.toLowerCase();
+  console.log(input);
+  cardContainer.innerHTML = "";
+  paginationContainer.innerHTML = "";
+  let res = await fetch(`${api}/search?q=${input}`);
+  let data = await res.json();
 
-    data.recipes.forEach((recipe) => {
-        const cardItem = document.createElement("li");
-        cardItem.className = "cardListItem";
-    
-        cardItem.innerHTML = `
+  data.recipes.forEach((recipe) => {
+    const cardItem = document.createElement("li");
+    cardItem.className = "cardListItem";
+
+    cardItem.innerHTML = `
           <figure>
             <img src="${recipe.image}" alt="${recipe.name}">
           </figure>
@@ -113,9 +122,8 @@ async function pagination() {
             </div>
           </div>
         `;
-        cardContainer.appendChild(cardItem);
-      });
+    cardContainer.appendChild(cardItem);
+  });
 }
 
 getdata();
-
