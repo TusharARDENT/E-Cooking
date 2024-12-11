@@ -1,64 +1,107 @@
-// Functionality of the page should appear here\
+const api = "https://dummyjson.com/recipes";
+let globalData = [];
+const pageListItem = document.querySelectorAll(".pg-listItem");
+const paginationList = document.querySelector(".pagination-list")
+const cardContainer = document.querySelector(".cardList");
+const paginationContainer = document.querySelector(".pagination");
+const searchBox = document.querySelector(".searchBox");
+let itemsPerPage = 8;
+let currentPage = 1;
 
-
-// async function myFunction(i) {
-//     const data = await fetch('https://dummyjson.com/recipes?limit=10&Skip=10&select=name')
-//     .then(res => res.json())
-//     console.log("myfunction",data.recipes[i]);
-// }
-
-// myFunction();
-
-// IIFE - IMMEDIATE INVOKE FUNCTION EXPRESSION
-
-// const APICALLING = ASYNC () => {
-    
-// }
-
-// fetch('https://dummyjson.com/recipes')
-// .then(res => res.json())
-// .then(console.log);
-
-// async function getData() {
-//     const url = "https://dummyjson.com/recipes";
-//           const response = await fetch(url);
-
-//       const json = await response.json();
-//       console.log(json.recipes[17]);
-//   }
-
-// getData();
-
-// fetch("https://dummyjson.com/recipes")
-// .then(response => console.log(response))
-// .catch(error => console.log(error))
-
-const cardTitle = document.querySelectorAll(".cardTitle");
-const cardListItem = document.querySelectorAll(".cardListItem");
-const prepTime = document.querySelectorAll(".timeToPrepare");
-const cuisine = document.querySelectorAll(".cookName");
-const difficulty = document.querySelectorAll(".cardTag");
-const images = document.querySelectorAll("img")
-
-console.log(images);
-
-async function apiCall() {
-    const data = await fetch('https://dummyjson.com/recipes');
-    const resp = await data.json();
-    // console.log("apicall", resp);
-
-    const { recipes } = resp;
-    console.log(recipes);
-
-    for (let i = 0; i < 30; i++) {
-        cardTitle[i].innerHTML = recipes[i].name;
-        cuisine[i].innerHTML = recipes[i].cuisine;
-        prepTime[i].innerHTML = recipes[i].prepTimeMinutes + " min Ratings:" + recipes[i].rating + "/5";
-        difficulty[i].innerHTML = recipes[i].difficulty;
-        images[i].src = recipes[i].image;
-
-        console.log(difficulty[i])
-    }
+console.log(searchBox);
+function searchBoxTest(event){
+    console.log(searchBox.value);
 }
 
-apiCall();
+searchBoxTest();
+async function getdata() {
+  // Fetch data
+  await fetch(api)
+    .then((res) => res.json())
+    .then((data) => {
+      globalData = data.recipes;
+      console.log(globalData);
+      updateDOM();
+      pagination();
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
+
+function updateDOM(startIndex, endIndex) {
+  cardContainer.innerHTML = "";
+//   paginationContainer.innerHTML = "";
+  let totalPages = Math.ceil(globalData.length / itemsPerPage);
+
+    // Calculate start and end indices for the current page
+    startIndex = (currentPage - 1) * itemsPerPage;
+    endIndex = Math.min(startIndex + itemsPerPage, globalData.length);
+   
+    // Add items for the current page
+    globalData.slice(startIndex, endIndex).forEach((recipe) => {
+    const cardItem = document.createElement("li");
+    cardItem.className = "cardListItem";
+
+    cardItem.innerHTML = `
+      <figure>
+        <img src="${recipe.image}" alt="${recipe.name}">
+      </figure>
+      <div class="cardDesc">
+        <div class="cardHeading">
+          <h4 class="cardTitle">${recipe.name}</h4>
+          <span class="cookName">${recipe.cuisine}</span>
+          <span class="cardTag">${recipe.difficulty}</span>
+        </div>
+        <div class="timeEstimation">
+          <span class="timeToPrepare">${recipe.prepTimeMinutes} min | ${recipe.rating} / 5.0 | ${recipe.reviewCount} reviews</span>
+          <span class="saveIcon"><span>Save Icon</span></span>
+        </div>
+      </div>
+    `;
+    cardContainer.appendChild(cardItem);
+  });
+
+  //Add pagination list
+//   paginationList.forEach((index) => {
+//     // listItem.className = "cardListItem";
+//     pageListItem.innerHTML = `<li class="pg-listItem">${index + 1}</li>`
+//     paginationContainer.appendChild(pageListItem)
+// });
+
+}
+
+getdata();
+function pagination() {
+    pageListItem.forEach((element, index) => {
+
+                // Handle previous page button
+        // prevPageButton.onclick = () => {
+        //     pageListItem.forEach((element) => {
+        //         element.classList.remove("pg-listItem-active");
+        //     });
+        //     if (currentPage > 1) {
+        //       currentPage--;  
+        //       updateDOM();    
+        //       prevPageButton.classList.add("pg-listItem-active")
+        //     }
+        //   };
+
+        element.onclick = () => {
+            pageListItem.forEach((element) => {
+                element.classList.remove("pg-listItem-active");
+            });
+            currentPage = index+1;
+            updateDOM()
+            element.classList.add("pg-listItem-active")
+        } 
+
+            // Handle next page button
+    // nextPageButton.onclick = () => {
+    //     if (currentPage < totalPages) {
+    //       currentPage++; 
+    //       updateDOM();   
+    //     }
+    //   };
+    });
+   
+  }
+  
