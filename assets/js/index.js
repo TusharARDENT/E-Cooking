@@ -6,8 +6,16 @@ const cardContainer = document.querySelector(".cardList");
 const searchBox = document.querySelector(".searchBox");
 let itemsPerPage = 8;
 let currentPage = 1;
+let timer;
 
-searchBox.addEventListener("input", searchOutput)
+searchBox.addEventListener("input", debounce)
+
+function debounce() {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+        searchOutput();
+    }, 1000)
+  }
 
 async function getdata() {
   // Fetch data
@@ -55,9 +63,7 @@ async function updateDOM(limit, skip) {
 async function pagination() {
     let limit = 12;
     let skip = 0;
-    let res = await fetch(`${api}?limit=${limit}&skip=${skip}`)
-    let data = await res.json();
-    console.log(data);
+
     paginationContainer.innerHTML = "";
     let totalPages = Math.ceil(globalData.length / itemsPerPage);
     console.log(totalPages);
