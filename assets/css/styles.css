@@ -364,17 +364,35 @@ header {
 	cursor: pointer;
 }
 
-.displayCard{
+.modal{
 	width: 80%;
-	padding: 20px;
-	margin-top: 10px;
-	position: fixed;
-	background-color: white;
-	border-radius: 10px;
+	padding: 20px 5%;
+	margin: 20px 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.displayImage{
-	max-height: 400px;
+.modalHeading{
+	display: flex;
+}
+
+.recipeCards .modal figure{
+	width: 70%;
+}
+
+.modal .cardHeading{
+	width: 30%;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.modal .displayInfo{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 .cardListItem:hover {
 	opacity: 80%;
@@ -418,13 +436,6 @@ header {
 	/* background-image: url(/assets/images/placeHolder.jpg); */
 	background-size: cover;
 	background-position: bottom;
-}
-
-.displayDetail{
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.3%;
-		justify-content: center;
 }
 
 img{
