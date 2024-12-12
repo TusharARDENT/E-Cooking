@@ -19,7 +19,7 @@ function debounce() {
 
 async function getdata() {
   try {
-    let res = await fetch(api);
+    let res = await fetch(`${api}?sortBy=name&order=asc`);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -61,7 +61,41 @@ async function updateDOM(limit, skip) {
       </div>
     `;
     cardContainer.appendChild(cardItem);
+    const id = recipe.id;
+    cardItem.addEventListener("click", ()=> cardDetails(id))
   });
+}
+
+async function cardDetails(id){
+  let res = await fetch(`${api}/${id}`)
+  let data = await res.json();
+  console.log(data, data.ingredients, data.cuisine)
+  paginationContainer.innerHTML = "";
+  
+  cardContainer.className = "displayDetail"
+  const cardItem = document.createElement("li");
+  // cardItem.removeEventListener("click", ()=> cardDetails(id))
+  cardItem.className = "displayCard";
+
+  cardItem.innerHTML = `
+    <figure>
+      <img src="${data.image}" alt="${data.name}" class = "displayImage">
+    </figure>
+    <div class="cardDesc">
+      <div class="cardHeading">
+        <h4 class="cardTitle">${data.name}</h4>
+        <span class="cookName">${data.cuisine}</span>
+        <span class="cardTag">${data.difficulty}</span>
+        
+      </div>
+      <div class="timeEstimation">
+        <span class="timeToPrepare">${data.prepTimeMinutes} min | ${data.rating} / 5.0 | ${data.reviewCount} reviews</span>
+        <span class="saveIcon"><span>Save Icon</span></span>
+      </div>
+    </div>
+  `;
+  cardContainer.appendChild(cardItem);
+
 }
 
 async function pagination() {
@@ -96,6 +130,10 @@ async function pagination() {
 
 async function searchOutput() {
   const input = searchBox.value.toLowerCase();
+
+  if(input == ""){
+    pagination();
+  }else{
   console.log(input);
   cardContainer.innerHTML = "";
   paginationContainer.innerHTML = "";
@@ -122,8 +160,11 @@ async function searchOutput() {
             </div>
           </div>
         `;
-    cardContainer.appendChild(cardItem);
+        cardContainer.appendChild(cardItem);
+        const id = recipe.id;
+        cardItem.addEventListener("click", ()=> cardDetails(id))
   });
+}
 }
 
 getdata();
