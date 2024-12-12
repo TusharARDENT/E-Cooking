@@ -364,6 +364,18 @@ header {
 	cursor: pointer;
 }
 
+.displayCard{
+	width: 80%;
+	padding: 20px;
+	margin-top: 10px;
+	position: fixed;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.displayImage{
+	max-height: 400px;
+}
 .cardListItem:hover {
 	opacity: 80%;
 	background-color: rgb(152, 151, 144);
@@ -406,6 +418,13 @@ header {
 	/* background-image: url(/assets/images/placeHolder.jpg); */
 	background-size: cover;
 	background-position: bottom;
+}
+
+.displayDetail{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.3%;
+		justify-content: center;
 }
 
 img{
