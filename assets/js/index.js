@@ -4,11 +4,47 @@ const pageListItem = document.querySelector(".pg-listItem");
 let paginationContainer = document.querySelector(".pagination-list");
 const cardContainer = document.querySelector(".cardList");
 const searchBox = document.querySelector(".searchBox");
+const modal = document.querySelector(".modal");
+const body = document.querySelector("body");
+const header = document.querySelector("header");
+const button = document.querySelector(".closeButton")
+console.log(modal);
 let itemsPerPage = 8;
 let currentPage = 1;
 let timer;
-
 searchBox.addEventListener("input", debounce);
+button.addEventListener("click", removeModal)
+
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+function removeModal(){
+  cardContainer.classList.remove("blurBg")
+  paginationContainer.classList.remove("blurBg")
+  header.classList.remove("blurBg")
+  modal.classList.remove("show")
+  body.style.overflow = "hidden"
+}
 
 function debounce() {
   clearTimeout(timer);
@@ -45,6 +81,7 @@ async function updateDOM(limit, skip) {
     cardItem.className = "cardListItem";
 
     cardItem.innerHTML = `
+    
       <figure>
         <img src="${recipe.image}" alt="${recipe.name}">
       </figure>
@@ -70,32 +107,53 @@ async function cardDetails(id){
   let res = await fetch(`${api}/${id}`)
   let data = await res.json();
   console.log(data, data.ingredients, data.cuisine)
-  paginationContainer.innerHTML = "";
+  modal.innerHTML = "";
   
-  cardContainer.className = "displayDetail"
   const cardItem = document.createElement("li");
-  // cardItem.removeEventListener("click", ()=> cardDetails(id))
   cardItem.className = "displayCard";
+  modal.classList.add("show")
 
   cardItem.innerHTML = `
-    <figure>
-      <img src="${data.image}" alt="${data.name}" class = "displayImage">
-    </figure>
-    <div class="cardDesc">
-      <div class="cardHeading">
-        <h4 class="cardTitle">${data.name}</h4>
-        <span class="cookName">${data.cuisine}</span>
-        <span class="cardTag">${data.difficulty}</span>
-        
-      </div>
-      <div class="timeEstimation">
-        <span class="timeToPrepare">${data.prepTimeMinutes} min | ${data.rating} / 5.0 | ${data.reviewCount} reviews</span>
-        <span class="saveIcon"><span>Save Icon</span></span>
-      </div>
-    </div>
+  <div class="modalHeading">
+<div class="swiffy-slider slider-item-helper">
+    <ul class="slider-container">
+        <li><figure>
+                  <img src="${data.image}" alt="">
+                </figure></li>
+        <li><figure>
+                  <img src="${data.image}" alt="">
+                </figure></li>
+        <li><figure>
+                  <img src="${data.image}" alt="">
+                </figure></li>
+    </ul>
+</div>
+                <div class="cardHeading">
+                <div class="buttonDiv">
+                  <button class="closeButton">x</button>
+                </div>
+                  <h4 class="cardTitle">${data.name}</h4>
+                  <span class="cookName">${data.cuisine}</span>
+                  <span class="cardTag">${data.difficulty}</span>
+                </div>
+              </div>
+              <div class="displayInfo">
+                <span class="ingredients">INGREDIENTS : ${data.ingredients}</span>
+                <span class="ingredients">INSTRUCTIONS : ${data.instructions}</span>
+                <span class="servings">No of Servings : ${data.servings}</span>
+                <span class="prepTime">Time to prepare : ${data.prepTimeMinutes}</span>
+                <span class="cookTime">Time to cook : ${data.cookTimeMinutes}</span>
+                <div class="timeEstimation">
+                  <span class="timeToPrepare">Difficulty : ${data.difficulty}</span>
+                </div>
+              </div>
   `;
-  cardContainer.appendChild(cardItem);
-
+  cardContainer.classList.add("blurBg")
+  paginationContainer.classList.add("blurBg")
+  header.classList.add("blurBg")
+  body.style.overflow = "hidden"
+  modal.appendChild(cardItem);
+  document.querySelector(".closeButton").addEventListener("click", removeModal)
 }
 
 async function pagination() {
@@ -166,5 +224,7 @@ async function searchOutput() {
   });
 }
 }
+
+
 
 getdata();
