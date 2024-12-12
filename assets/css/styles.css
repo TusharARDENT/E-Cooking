@@ -366,34 +366,93 @@ header {
 
 .modal{
 	width: 80%;
-	padding: 20px 5%;
+	padding: 40px 5%;
+	border-radius: 20px;
 	margin: 20px 5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: fixed;
+	top: 10%;
+	display: none;
+	background-color: rgb(225, 225, 225);
 }
 
+.show{
+	display: block;
+	z-index: 2;
+}
 .modalHeading{
 	display: flex;
+	font-size: 1.5em;
 }
 
 .recipeCards .modal figure{
-	width: 70%;
+	width: 80%;
+	padding: 10px 5%;
+	background-size: cover;
+	background-position: bottom;
+}
+
+.modal img{
+	border-radius: 20px;
+	box-shadow: 2px 2px 2px -1px #111;
+
 }
 
 .modal .cardHeading{
-	width: 30%;
+	width: 40%;
+	padding: 150px 5%;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 20px;
 }
 
 .modal .displayInfo{
+	width: 100%;
+	padding: 10px 5%;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	justify-content: center;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	gap: 10px;
 }
+
+.displayCard{
+	width: 100%;
+	text-align: justify;
+}
+.buttonDiv{
+	display: flex;
+	justify-content: end;
+}
+
+.blurBg{
+	filter: blur(2px);
+	pointer-events: none
+}
+.modal button{
+	width: 7%;
+	padding: 3px 0;
+	border: none;
+	border-radius: 5px;
+	font-size: 0.7em;
+	color: white;
+	background-color: rgb(253, 149, 131);
+}
+.swiper {
+	width: 600px;
+	height: 350px;
+  }
+
+  .swiper-slide{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
 .cardListItem:hover {
 	opacity: 80%;
 	background-color: rgb(152, 151, 144);
@@ -433,10 +492,11 @@ header {
 .recipeCards figure {
 	width: 100%;
 	padding: 0;
-	/* background-image: url(/assets/images/placeHolder.jpg); */
 	background-size: cover;
 	background-position: bottom;
 }
+
+
 
 img{
 	max-height: 300px;
