@@ -21,6 +21,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Alike&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=UnifrakturMaguntia&display=swap"
     rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" ></script>
+<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet">
+
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/styles.css">
 
@@ -272,9 +279,12 @@
             </ul>
           </div>
           <div class="modal">
-              <div class="modalHeading">
-                <figure>
-                  <img src="" alt="cardImage">
+            <div class="modalHeading">
+                <div class="buttonDiv">
+                  <button class="closeButton">x</button>
+                </div>
+                <figure class="modalFigure">
+                  <img src="" alt="cardImage" class="modalImage">
                 </figure>
                 <div class="cardHeading">
                   <h4 class="cardTitle">Card Title</h4>
@@ -294,6 +304,7 @@
               </div>
           </div>
         </div>
+      </div>
       </section>      
     </main>
     <!-- footer content of the page -->
@@ -305,6 +316,8 @@
           </section>
     </footer>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
 
