@@ -364,6 +364,36 @@ header {
 	cursor: pointer;
 }
 
+.modal{
+	width: 80%;
+	padding: 20px 5%;
+	margin: 20px 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.modalHeading{
+	display: flex;
+}
+
+.recipeCards .modal figure{
+	width: 70%;
+}
+
+.modal .cardHeading{
+	width: 30%;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.modal .displayInfo{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
 .cardListItem:hover {
 	opacity: 80%;
 	background-color: rgb(152, 151, 144);
