@@ -273,19 +273,15 @@ header {
 	justify-content: space-between;
 }
 
-.navbarList li{
+.navbarList li {
 	padding: 5px 2%;
 	border-radius: 5px;
 }
 
-.navbarList li:hover{
+.navbarList li:hover {
 	background-color: rgb(152, 151, 144);
 }
 
-img:hover{
-	scale: 110%;
-	transition: all 0.3s;
-}
 .searchIcon::before {
 	content: "\f002";
 	font-family: "FontAwesome";
@@ -369,7 +365,7 @@ img:hover{
 	cursor: pointer;
 }
 
-.modal{
+.modal {
 	width: 80%;
 	padding: 40px 5%;
 	border-radius: 20px;
@@ -383,35 +379,41 @@ img:hover{
 	background-color: rgb(248, 249, 244);
 }
 
-.show{
+.show {
 	display: block;
 	z-index: 2;
 }
-.modalHeading{
+
+.modalHeading {
 	display: flex;
 	font-size: 1.5em;
 }
 
-.recipeCards .modal figure{
-	width: 80%;
-	padding: 10px 5%;
+.recipeCards .modal figure {
+	width: 100%;
+	/* padding: 10px 5%; */
 	background-size: cover;
 	background-position: bottom;
 }
 
-.modal .container li{
+.slider-container{
+	width: 70%;
+	margin-left: 10%;
+}
+
+.modal .container li {
 	background-color: rgb(248, 249, 244);
 }
 
-.modal img{
+.modal img {
 	border-radius: 20px;
 	box-shadow: 2px 2px 2px -1px #111;
 
 }
 
-.modal .cardHeading{
+.modal .cardHeading {
 	width: 40%;
-	padding:  150px 5% 150px 0;
+	padding: 150px 5% 150px 0;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -419,7 +421,7 @@ img:hover{
 	gap: 20px;
 }
 
-.modal .displayInfo{
+.modal .displayInfo {
 	width: 100%;
 	padding: 10px 5%;
 	display: flex;
@@ -430,38 +432,47 @@ img:hover{
 	gap: 10px;
 }
 
-.displayCard{
+.displayCard {
 	width: 100%;
 	text-align: justify;
 }
-.buttonDiv{
+
+.buttonDiv {
 	display: flex;
 	justify-content: end;
 }
 
-.blurBg{
+.blurBg {
 	filter: blur(2px);
 	pointer-events: none
 }
-.modal .closeButton{
-	width: 7%;
+
+.modal .closeButton {
+	width: 2.5%;
 	padding: 3px 0;
 	border: none;
 	border-radius: 5px;
 	font-size: 0.7em;
 	color: white;
-	background-color: rgb(253, 149, 131);
+	background-color: rgb(255, 77, 45);
 }
+
 .swiper {
 	width: 600px;
 	height: 350px;
-  }
+}
 
-  .swiper-slide{
+.swiper-slide {
+	width: fit-content;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
+}
+
+li {
+	background-color: transparent;
+}
+
 .cardListItem:hover {
 	opacity: 80%;
 	background-color: rgb(152, 151, 144);
@@ -507,9 +518,10 @@ img:hover{
 
 
 
-img{
+img {
 	max-height: 320px;
 }
+
 .timeEstimation {
 	display: flex;
 	justify-content: space-between;
@@ -552,14 +564,15 @@ img{
 	cursor: pointer;
 }
 
-.pg-listItem:hover{
+.pg-listItem:hover {
 	opacity: 80%;
 	background-color: rgb(152, 151, 144);
 }
 
-.pg-listItem-active{
+.pg-listItem-active {
 	background-color: rgb(152, 151, 144);
 }
+
 @media(max-width: 1760px) {
 	.titleWrapper {
 		width: fit-content;
@@ -712,7 +725,7 @@ img{
 		padding: 10px 1%;
 	}
 
-	.pg-listItem{
+	.pg-listItem {
 		width: 5%;
 	}
 }
