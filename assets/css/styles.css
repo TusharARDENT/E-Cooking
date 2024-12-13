@@ -281,6 +281,11 @@ header {
 .navbarList li:hover{
 	background-color: rgb(152, 151, 144);
 }
+
+img:hover{
+	scale: 110%;
+	transition: all 0.3s;
+}
 .searchIcon::before {
 	content: "\f002";
 	font-family: "FontAwesome";
@@ -375,7 +380,7 @@ header {
 	position: fixed;
 	top: 10%;
 	display: none;
-	background-color: rgb(225, 225, 225);
+	background-color: rgb(248, 249, 244);
 }
 
 .show{
@@ -394,6 +399,10 @@ header {
 	background-position: bottom;
 }
 
+.modal .container li{
+	background-color: rgb(248, 249, 244);
+}
+
 .modal img{
 	border-radius: 20px;
 	box-shadow: 2px 2px 2px -1px #111;
@@ -402,7 +411,7 @@ header {
 
 .modal .cardHeading{
 	width: 40%;
-	padding: 150px 5%;
+	padding:  150px 5% 150px 0;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -434,7 +443,7 @@ header {
 	filter: blur(2px);
 	pointer-events: none
 }
-.modal button{
+.modal .closeButton{
 	width: 7%;
 	padding: 3px 0;
 	border: none;
@@ -499,7 +508,7 @@ header {
 
 
 img{
-	max-height: 300px;
+	max-height: 320px;
 }
 .timeEstimation {
 	display: flex;

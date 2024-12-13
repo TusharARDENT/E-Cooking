@@ -82,9 +82,28 @@ async function updateDOM(limit, skip) {
 
     cardItem.innerHTML = `
     
-      <figure>
-        <img src="${recipe.image}" alt="${recipe.name}">
-      </figure>
+<div class="swiffy-slider slider-item-helper">
+    <ul class="slider-container">
+        <li><figure>
+                  <img src="${recipe.image}" alt="">
+                </figure></li>
+        <li><figure>
+                  <img src="${recipe.image}" alt="">
+                </figure></li>
+        <li><figure>
+                  <img src="${recipe.image}" alt="">
+                </figure></li>
+    </ul>
+     <button type="button" class="slider-nav"></button>
+    <button type="button" class="slider-nav slider-nav-next"></button>
+        <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+    </div>
+
+</div>
+    
       <div class="cardDesc">
         <div class="cardHeading">
           <h4 class="cardTitle">${recipe.name}</h4>
